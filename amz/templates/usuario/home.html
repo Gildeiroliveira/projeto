@@ -1,0 +1,30 @@
+{% extends 'usuario/base.html' %}
+{% block conteudo %}
+    
+    <form action="{% url 'Itens' %}" method="post">
+      {% csrf_token %}
+      <div style='text-align: center;' class="container">
+          <h1>Cadastro de Itens: </h1>
+          <table class="container">
+            <tr>
+              <td>Codigo de Barra <input name="codigo_pro" class="form-control-sm" type="text"></td>
+            </tr>
+            <tr>
+              <td>Nome <input name="nome" class="form-control-sm" type="text"></td>      
+            </tr>
+            <tr>
+              <td>Preço <input name="preco" class="form-control-sm" type="text"></td>           
+            </tr>
+            <tr>
+              <td>Categoria <input name="categoria" class="form-control-sm" type="text"></td>
+            </tr>
+            
+          </table>
+          
+          <button class="form-control-sm">Cadastrar</button>
+          
+          </div>
+      </div>
+    </form>
+    
+{% endblock %}
