@@ -1,0 +1,26 @@
+{% extends 'usuario/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h1>Itens a serem DELETADOS</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Codigo dos Produtos</th>
+            <th>Produtos</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Excluir</th>
+        </tr>
+        {% for i in produtos %}
+        <tr>
+            <td>{{i.codigo_pro}}</td>
+            <td>{{i.nome}}</td>
+            <td>{{i.preco}}</td>
+            <td>{{i.categoria}}</td>
+            <td><a href="{% url 'delete' i.codigo_pro %}">Apagar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Produto
 
@@ -25,3 +25,14 @@ def cadastro(request):
 
     #listagem de itens
     return render(request, 'usuario/itens.html', produtos)
+
+def delete(request, codigo_pro):
+    produto = Produto.objects.get(codigo_pro = codigo_pro)
+    produto.delete()
+    return redirect(ver_d)
+
+def ver_d(request):
+    produtos = {
+        'produtos' : Produto.objects.all()
+    }
+    return render(request, 'usuario/delete.html', produtos)
