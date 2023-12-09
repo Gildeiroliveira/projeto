@@ -36,3 +36,9 @@ def ver_d(request):
         'produtos' : Produto.objects.all()
     }
     return render(request, 'usuario/delete.html', produtos)
+
+def ver_itens (request):
+    produtos = {
+        'produtos' : Produto.objects.all()
+    }
+    return render(request, 'usuario/itens.html', produtos)

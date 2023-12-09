@@ -3,28 +3,46 @@
     
     <form action="{% url 'Itens' %}" method="post">
       {% csrf_token %}
-      <div style='text-align: center;' class="container">
-          <h1>Cadastro de Itens: </h1>
-          <table class="container">
-            <tr>
-              <td>Codigo de Barra <input name="codigo_pro" class="form-control-sm" type="text"></td>
-            </tr>
-            <tr>
-              <td>Nome <input name="nome" class="form-control-sm" type="text"></td>      
-            </tr>
-            <tr>
-              <td>Preço <input name="preco" class="form-control-sm" type="text"></td>           
-            </tr>
-            <tr>
-              <td>Categoria <input name="categoria" class="form-control-sm" type="text"></td>
-            </tr>
+      
+      <h1 style="text-align: center;">CADASTRO</h1><br>
+              
+      <div class="container w-50" style="background-color: rgb(240, 239, 239);">
+        <form class="form-control-sm">
+          <fieldset >
+            <legend>Cadatros de Itens:</legend>
+            <div class="mb-3">
+              <label for="disabledTextInput" class="form-label">Codigo de Barras;</label>
+              <input type="text" name="codigo_pro" class="form-control" placeholder="Digite aqui">
+            </div>
+            <div class="mb-3">
+              <label for="disabledTextInput" class="form-label">Nome;</label>
+              <input type="text" name="nome" class="form-control" placeholder="Digite aqui">
+            </div>
+            <div class="mb-3">
+              <label for="disabledTextInput" class="form-label">Preço;</label>
+              <input type="text" name="preco" class="form-control" placeholder="Digite aqui">
+            </div>
+            <div class="mb-3">
+              <label for="disabledSelect" class="form-label">Categoria escolha aqui</label>
+              <select name="categoria" class="form-select">
+                <option>Alimentação</option>
+                <option>Construção</option>
+                <option>Limpeza</option>
+                <option>Beleza</option>
+                <option>Outros</option>
+              </select>
+            </div>
             
-          </table>
-          
-          <button class="form-control-sm">Cadastrar</button>
-          
-          </div>
+            <button type="submit" class="btn btn-primary float-end">Submit</button>
+            
+          </fieldset>
+          <br>
+        </form>
       </div>
     </form>
+    <br/>
+    <br/>
+    <br/>
+    
     
 {% endblock %}
