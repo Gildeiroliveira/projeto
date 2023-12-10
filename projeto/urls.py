@@ -11,7 +11,9 @@ urlpatterns = [
     path('cadastro/', views.cadastro, name='Itens'),
     path('ver_d/', views.ver_d, name='ver'),
     path('delete/<int:codigo_pro>', views.delete, name='delete'),
-    path('ver_itens', views.ver_itens, name='ver_itens')
+    path('ver_itens', views.ver_itens, name='ver_itens'),
+    path('editar', views.editar, name='editar'),
+    path('update/<int:codigo_pro>', views.update, name='update')
 ]
 
 

@@ -38,7 +38,15 @@ def ver_d(request):
     return render(request, 'usuario/delete.html', produtos)
 
 def ver_itens (request):
+    produtos =  Produto.objects.all()
+    return render(request, 'usuario/itens.html', {'produtos' : produtos})
+
+def editar(request):
     produtos = {
         'produtos' : Produto.objects.all()
     }
-    return render(request, 'usuario/itens.html', produtos)
+    return render(request, 'usuario/editar.html', produtos)
+
+def update(request, codigo_pro):
+    produtos = Produto.objects.get(codigo_pro = codigo_pro)
+    return render(request, 'usuario/update.html', {'produtos':produtos})

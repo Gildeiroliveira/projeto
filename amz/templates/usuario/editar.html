@@ -2,7 +2,7 @@
 {% block conteudo %}
 
 <div class="container">
-    <h1>Itens a serem DELETADOS</h1>
+    <h1>Itens a serem ATUALIZADOS</h1>
     <table class="table table-bordered table-striped">
         <tr>
             <th>Codigo dos Produtos</th>
@@ -17,7 +17,7 @@
             <td>{{i.nome}}</td>
             <td>{{i.preco}}</td>
             <td>{{i.categoria}}</td>
-            <td><a href="{% url 'delete' i.codigo_pro %}" class="btn btn-primary btn-danger">Apagar</a></td>
+            <td><a href="{% url 'update' i.codigo_pro %}" class="btn btn-primary btn-warning">Editar</a></td>
         </tr>
         {% endfor %}
     </table>
