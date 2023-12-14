@@ -1,0 +1,23 @@
+{% extends 'usuario/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h1>Lista de itens cadastrados</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Codigo dos Produtos</th>
+            <th>Produtos</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+        
+        <tr>
+            <td>{{produtos.codigo_pro}}</td>
+            <td>{{produtos.nome}}</td>
+            <td>{{produtos.preco}}</td>
+            <td>{{produtos.categoria}}</td>
+        </tr>
+        
+    </table>
+</div>
+{% endblock %}

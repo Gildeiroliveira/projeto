@@ -13,7 +13,8 @@ urlpatterns = [
     path('delete/<int:codigo_pro>', views.delete, name='delete'),
     path('ver_itens', views.ver_itens, name='ver_itens'),
     path('editar', views.editar, name='editar'),
-    path('update/<int:codigo_pro>', views.update, name='update')
+    path('update/<int:codigo_pro>', views.update, name='update'),
+    path('get/', views.get, name='get')
 ]
 
 

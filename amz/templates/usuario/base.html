@@ -38,8 +38,10 @@
                 <a class="nav-link " href="{% url 'ver'  %}" tabindex="-1">Deleta</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="{% url 'get' %}" method="get"> 
+              {% csrf_token %}
+
+              <input class="form-control me-2" type="text" placeholder="Search"  name="nomep">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>

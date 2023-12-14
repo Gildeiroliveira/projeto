@@ -50,3 +50,8 @@ def editar(request):
 def update(request, codigo_pro):
     produtos = Produto.objects.get(codigo_pro = codigo_pro)
     return render(request, 'usuario/update.html', {'produtos':produtos})
+
+def get(request):
+    name = request.GET.get('nomep')
+    produtos = Produto.objects.get(nome = name)
+    return render(request, 'usuario/pesquisa.html', {'produtos':produtos})
